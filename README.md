@@ -49,8 +49,8 @@ jobs:
       - name: Verify Commit Hash
         uses: shiftEscape/commit-hash-verifier-action@v1
         with:
-          commit-hash: ${{ github.sha }}
-          branch-name: ${{ github.ref }}
+          commit-hash: ${{ github.sha }} # reference your commit hash here
+          branch-name: ${{ github.ref }} # reference you branch name here
 
       # Exit on invalid commit hash
       - name: Stop job if commit is invalid
