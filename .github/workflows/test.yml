@@ -1,4 +1,4 @@
-name: Commit Verifier Test
+name: Commit Verifier Action Test
 
 on:
   workflow_dispatch:
