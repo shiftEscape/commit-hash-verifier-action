@@ -1,8 +1,11 @@
 # Commit Hash Verifier Action
 
-[![Commit Verifier Action Test](https://github.com/shiftEscape/commit-hash-verifier-action/actions/workflows/test.yml/badge.svg)](https://github.com/shiftEscape/commit-hash-verifier-action/actions/workflows/test.yml)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FshiftEscape%2Fcommit-hash-verifier-action%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/shiftEscape/commit-hash-verifier-action/goto?ref=main)
+[![License](https://img.shields.io/github/license/shiftEscape/commit-hash-verifier-action)](https://github.com/shiftEscape/your-repository/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues/shiftEscape/commit-hash-verifier-action)](https://github.com/shiftEscape/commit-hash-verifier-action/issues)
+[![Stars](https://img.shields.io/github/stars/shiftEscape/commit-hash-verifier-action)](https://github.com/shiftEscape/commit-hash-verifier-action/stargazers)
 
-This GitHub Action verifies the validity of a commit hash from a specific branch.
+Verifies the validity of a commit hash from a specific branch!
 
 ## Usage
 
@@ -11,7 +14,7 @@ To use this action in your workflow, you can include the following step or refer
 ```yaml
 steps:
   - name: Verify Commit
-    uses: shiftEscape/commit-hash-verifier-action@v1
+    uses: shiftEscape/commit-hash-verifier-action
     with:
       commit-hash: ${{ github.sha }} # defaults to HEAD
       branch-name: ${{ github.ref }} # defaults to current branch (triggered by event)
@@ -47,7 +50,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Verify Commit Hash
-        uses: shiftEscape/commit-hash-verifier-action@v1
+        uses: shiftEscape/commit-hash-verifier-action # or specify version using `@`
         with:
           commit-hash: ${{ github.sha }} # reference your commit hash here
           branch-name: ${{ github.ref }} # reference you branch name here

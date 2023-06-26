@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Verify Commit Hash
-        uses: shiftEscape/commit-hash-verifier-action@v1.0.1
+        uses: shiftEscape/commit-hash-verifier-action
         with:
           commit-hash: ${{ github.sha }}
           branch-name: ${{ github.ref }}
