@@ -19,7 +19,8 @@ runs:
   using: "composite"
   steps:
     - name: Verify commit hash
-      id: verify_commit
+      id: verify-commit
+      shell: bash
       run: |
         branch_name="${{ inputs.branch-name }}"
         commit_id="${{ inputs.commit-hash }}"
