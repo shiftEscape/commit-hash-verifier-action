@@ -1,5 +1,9 @@
 name: Commit Hash Verifier
 description: Verifies the validity of a commit hash from a specific branch
+author: shiftEscape
+branding:
+  icon: "git-commit"
+  color: "purple"
 
 inputs:
   commit-hash:
