@@ -14,7 +14,7 @@ To use this action in your workflow, you can include the following step or refer
 ```yaml
 steps:
   - name: Verify Commit
-    uses: shiftEscape/commit-hash-verifier-action
+    uses: shiftEscape/commit-hash-verifier-action@<version>
     with:
       commit-hash: ${{ github.sha }} # defaults to HEAD
       branch-name: ${{ github.ref }} # defaults to current branch (triggered by event)
@@ -50,7 +50,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Verify Commit Hash
-        uses: shiftEscape/commit-hash-verifier-action # or specify version using `@`
+        uses: shiftEscape/commit-hash-verifier-action@main # specify version using `@`
         with:
           commit-hash: ${{ github.sha }} # reference your commit hash here
           branch-name: ${{ github.ref }} # reference you branch name here
