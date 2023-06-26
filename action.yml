@@ -2,10 +2,14 @@ name: Commit Hash Verifier
 description: Verifies the validity of a commit hash from the current workflow branch
 
 inputs:
-  commit_hash:
-    description: "The commit hash to verify (defaults to HEAD)"
+  commit-hash:
+    description: "The commit hash to verify"
     required: true
     default: ${{ github.sha }}
+  branch-name:
+    description: "The name of the branch to check the commit against"
+    required: true
+    default: ${{ github.ref }}
 
 outputs:
   valid_commit:
@@ -14,16 +18,11 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Get current branch name
-      id: branch_name
-      run: |
-        echo "::set-output name=branch_name::${GITHUB_REF#refs/heads/}"
-
     - name: Verify commit hash
       id: verify_commit
       run: |
-        branch_name="${{ steps.branch_name.outputs.branch_name }}"
-        commit_id="${{ inputs.commit_hash }}"
+        branch_name="${{ inputs.branch-name }}"
+        commit_id="${{ inputs.commit-hash }}"
 
         if ! git rev-parse --quiet --verify "${commit_id}"; then
           echo "::set-output name=valid_commit::false"
