@@ -1,0 +1,30 @@
+name: Commit Verifier Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify-commit-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Verify Commit Hash
+        uses: shiftEscape/commit-hash-verifier-action@v1
+        with:
+          commit-hash: ${{ github.sha }}
+          branch-name: ${{ github.ref }}
+
+      # Exit on invalid commit hash
+      - name: Stop job if commit is invalid
+        if: steps.verify-commit.outputs.valid-commit == 'false'
+        run: exit 1
+
+      # Continue with other steps if commit is valid
+      - name: Continue with remaining steps
+        if: steps.verify-commit.outputs.valid-commit == 'true'
+        run: |
+          # Continue with your desired workflow logic here
+          echo "Commit hash is valid and from the correct branch"
