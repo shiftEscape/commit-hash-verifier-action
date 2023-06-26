@@ -1,6 +1,6 @@
 # Commit Hash Verifier Action
 
-This GitHub Action verifies the validity of a commit hash from the current workflow branch.
+This GitHub Action verifies the validity of a commit hash from a specific branch.
 
 ## Usage
 
