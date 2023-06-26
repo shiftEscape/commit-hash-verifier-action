@@ -15,18 +15,6 @@ steps:
       branch-name: ${{ github.ref }} # defaults to current branch (triggered by event)
 ```
 
-Also, make sure to include this step in your workflow file and adjust the uses field to reference your action repository.
-
-> Note: This action is designed to be used on branch `push` events. To restrict it to run only on branch push events, you can configure the workflow file to include a `on.push.branches` filter, specifying the branches you want to trigger the workflow. For example:
-
-```yaml
-on:
-  push:
-    branches:
-      - main
-      - develop
-```
-
 ## Inputs
 
 - `commit-hash` (required): The commit hash to verify.
