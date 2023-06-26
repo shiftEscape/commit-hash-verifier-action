@@ -20,11 +20,13 @@ jobs:
       # Exit on invalid commit hash
       - name: Stop job if commit is invalid
         if: steps.verify-commit.outputs.valid-commit == 'false'
+        shell: bash
         run: exit 1
 
       # Continue with other steps if commit is valid
       - name: Continue with remaining steps
         if: steps.verify-commit.outputs.valid-commit == 'true'
+        shell: bash
         run: |
           # Continue with your desired workflow logic here
           echo "Commit hash is valid and from the correct branch"
