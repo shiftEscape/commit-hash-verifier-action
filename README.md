@@ -1,5 +1,7 @@
 # Commit Hash Verifier Action
 
+[![Commit Verifier Action Test](https://github.com/shiftEscape/commit-hash-verifier-action/actions/workflows/test.yml/badge.svg)](https://github.com/shiftEscape/commit-hash-verifier-action/actions/workflows/test.yml)
+
 This GitHub Action verifies the validity of a commit hash from a specific branch.
 
 ## Usage
