@@ -1,5 +1,5 @@
 name: Commit Hash Verifier
-description: Verifies the validity of a commit hash from the current workflow branch
+description: Verifies the validity of a commit hash from a specific branch
 
 inputs:
   commit-hash:
