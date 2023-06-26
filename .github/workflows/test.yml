@@ -1,7 +1,9 @@
 name: Commit Verifier Action Test
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   verify-commit-job:
