@@ -1,7 +1,7 @@
 # Commit Hash Verifier Action
 
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FshiftEscape%2Fcommit-hash-verifier-action%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/shiftEscape/commit-hash-verifier-action/goto?ref=main)
-[![License](https://img.shields.io/github/license/shiftEscape/commit-hash-verifier-action)](https://github.com/shiftEscape/your-repository/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/shiftEscape/commit-hash-verifier-action)](https://github.com/shiftEscape/commit-hash-verifier-action/blob/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/shiftEscape/commit-hash-verifier-action)](https://github.com/shiftEscape/commit-hash-verifier-action/issues)
 [![Stars](https://img.shields.io/github/stars/shiftEscape/commit-hash-verifier-action)](https://github.com/shiftEscape/commit-hash-verifier-action/stargazers)
 
