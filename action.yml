@@ -32,11 +32,12 @@ runs:
         if ! git rev-parse --quiet --verify "${commit_id}"; then
           echo "valid_commit=false" >> $GITHUB_OUTPUT
           echo "Invalid commit hash: \`$commit_id\`"
+          exit 1
         else
           # Verify if the commit is on the specified branch
           if ! git merge-base --is-ancestor "${commit_id}" "${branch_name}"; then
             echo "valid_commit=false" >> $GITHUB_OUTPUT
-            echo "Commit \`$commit_id\` not found from branch \`$branch_name\`"
+            echo "Commit \`$commit_id\` not found on the branch \`$branch_name\`"
             exit 1
           else
             echo "valid_commit=true" >> $GITHUB_OUTPUT
