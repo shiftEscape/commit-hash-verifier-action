@@ -30,15 +30,16 @@ runs:
         commit_id="${{ inputs.commit-hash }}"
 
         if ! git rev-parse --quiet --verify "${commit_id}"; then
-          echo "::set-output name=valid_commit::false"
+          echo "valid_commit=false" >> $GITHUB_OUTPUT
           echo "Invalid commit hash: \`$commit_id\`"
         else
           # Verify if the commit is on the specified branch
           if ! git merge-base --is-ancestor "${commit_id}" "${branch_name}"; then
-            echo "::set-output name=valid_commit::false"
+            echo "valid_commit=false" >> $GITHUB_OUTPUT
             echo "Commit \`$commit_id\` not found from branch \`$branch_name\`"
+            exit 1
           else
-            echo "::set-output name=valid_commit::true"
-            echo "Commit \`$commit_id\` is valid from branch \`$branch_name\`"
+            echo "valid_commit=true" >> $GITHUB_OUTPUT
+            echo "Commit \`$commit_id\` is valid on the branch \`$branch_name\`"
           fi
         fi
